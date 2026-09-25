@@ -1,0 +1,32 @@
+/* ── Light theme (default) ── */
+:root {
+  --bg:          #f5f5fa;
+  --surface:     #ffffff;
+  --surface-2:   #eeeef6;
+  --border:      #d0d0e0;
+  --border-2:    #b8b8d0;
+  --accent:      #0284c7;
+  --accent-glow: rgba(2, 132, 199, 0.12);
+  --muted:       #9090b0;
+  --fg:          #0a0a18;
+  --fg-dim:      #52527a;
+  --nav-h:       56px;
+  /* --font-sans:   'Plus Jakarta Sans' */
+  --font-sans:   system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ── Dark theme ── */
+:root.dark {
+  --bg:          #09090d;
+  --surface:     #111116;
+  --surface-2:   #18181f;
+  --border:      #1e1e2a;
+  --border-2:    #2a2a3a;
+  --accent:      #22d3ee;
+  --accent-glow: rgba(34, 211, 238, 0.15);
+  --muted:       #44445a;
+  --fg:          #f0f0f8;
+  --fg-dim:      #8888aa;
+  --nav-h:       56px;
+  /* --font-sans:   system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; */
+}

@@ -1,3 +1,38 @@
+/* ── Theme toggle ── */
+const root     = document.documentElement;
+const themeBtns = document.querySelectorAll('#theme-btn, #theme-btn-mobile');
+
+function setTheme(isDark) {
+  root.classList.toggle('dark', isDark);
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+  themeBtns.forEach(btn => {
+    const sun   = btn.querySelector('.icon-sun');
+    const moon  = btn.querySelector('.icon-moon');
+    const label = btn.querySelector('.theme-label');
+    if (sun)   sun.style.display   = isDark ? 'none'  : 'block';
+    if (moon)  moon.style.display  = isDark ? 'block'   : 'none';
+    if (label) label.textContent   = isDark ? 'light'  : 'dark';
+  });
+}
+
+// Restore saved preference orfallback to system preference 
+const saved = localStorage.getItem('theme');
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+if (saved !== null) {
+  setTheme(saved === 'dark');
+} else {
+  setTheme(systemPrefersDark);
+}
+
+// Event Listeners for theme toggle buttons
+themeBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    setTheme(!root.classList.contains('dark'));
+  });
+});
+
 /* ── Hamburger + sidebar ── */
 const hamburger = document.getElementById('hamburger-btn');
 const sidebar   = document.getElementById('sidebar');
@@ -64,3 +99,72 @@ window.addEventListener('scroll', () => {
     ? '0 4px 24px rgba(0,0,0,0.18)'
     : 'none';
 }, { passive: true });
+
+/* Navigation */
+const navLinks = document.querySelectorAll(".nav-link");
+const sidebarLinks = document.querySelectorAll(".sidebar-link");
+const sections = document.querySelectorAll("#home, #about, #skills, #projects, #resume, #contact");
+
+const allNavLinks = document.querySelectorAll(".nav-link, sidebar-link");
+
+allNavLinks.forEach(link => {
+  link.addEventListener("click", function () {
+
+    const targetId = this.getAttribute("href");
+
+    if (!targetId || !targetId.getAttribute("href")) {
+      return;
+    }
+
+    const targetSection = document.querySelector(targetId);
+
+    if (!targetSection) {
+      return;
+    }
+
+    closeMenu();
+
+  });
+});
+
+/* Active Navigation */
+
+function setActiveSection(sectionId) {
+  navLinks.forEach(link => {
+    link.classList.toggle(
+      "active",
+      link.getAttribute("href") === `#${sectionId}`
+    );
+  });
+  sidebarLinks.forEach(link => {
+    link.classList.toggle(
+      "active",
+      link.getAttribute("href") === `#${sectionId}`
+    );
+  });
+}
+
+/* Intersection Observer */
+const observerOptions = {
+  root: null,
+  rootMargin: "-35% 0px -55% 0px",
+  threshold: 0
+};
+
+const sectionObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setActiveSection(
+          entry.target.id
+        );
+      }
+    });
+  },
+  observerOptions
+);
+
+/* Observe Section */
+sections.forEach(section => {
+  sectionObserver.observe(section);
+});

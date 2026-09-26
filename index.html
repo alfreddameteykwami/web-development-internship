@@ -25,11 +25,12 @@
         </button>
       </div>
       <nav class="sidebar-nav">
-        <a href="#hero"     class="sidebar-link" data-close><span>Home</span>    <span class="sidebar-num">01</span></a>
-        <a href="#projects" class="sidebar-link" data-close><span>Projects</span><span class="sidebar-num">02</span></a>
-        <a href="#skills"   class="sidebar-link" data-close><span>Skills</span>  <span class="sidebar-num">03</span></a>
-        <a href="#resume"   class="sidebar-link" data-close><span>Resume</span>  <span class="sidebar-num">04</span></a>
-        <a href="#contact"  class="sidebar-link" data-close><span>Contact</span> <span class="sidebar-num">05</span></a>
+        <a href="#hero"     class="sidebar-link active" data-close><span>Home</span><span class="sidebar-num">01</span></a>
+        <a href="#about"    class="sidebar-link" data-close><span>About me</span>   <span class="sidebar-num">02</span></a>
+        <a href="#skills"   class="sidebar-link" data-close><span>Skills</span>     <span class="sidebar-num">03</span></a>
+        <a href="#projects" class="sidebar-link" data-close><span>Projects</span>   <span class="sidebar-num">04</span></a>
+        <a href="#resume"   class="sidebar-link" data-close><span>Resume</span>     <span class="sidebar-num">05</span></a>
+        <a href="#contact"  class="sidebar-link" data-close><span>Contact</span>    <span class="sidebar-num">06</span></a>
       </nav>
       <div class="sidebar-footer">&copy; 2026 Alfred Dametey Kwami</div>
     </aside>
@@ -38,19 +39,43 @@
     <nav class="navbar" id="navbar">
       <div class="nav-inner">
 
-        <a href="#hero" class="nav-logo">
-          <span class="nav-logo-muted">~/</span>Home
-        </a>
+        <a href="#" class="nav-logo">
+          <span class="nav-logo-muted">~/</span>alfredkwamidev
+        </a> 
 
         <div class="nav-desktop">
+          <a href="#hero"    class="nav-link active">Home</a>
           <a href="#about"   class="nav-link">About me</a>
           <a href="#skills"  class="nav-link">Skills</a>
           <a href="#projects"class="nav-link">Projects</a>
           <a href="#resume"  class="nav-link">Resume</a>
           <a href="#contact" class="nav-link">Contact</a>
+          <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">
+            <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+            <span class="theme-label">dark</span>
+          </button>
         </div>
 
         <div class="nav-mobile">
+          <button class="theme-btn theme-btn-icon" id="theme-btn-mobile" aria-label="Toggle theme">
+            <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
           <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
             <span class="ham-line"></span>
             <span class="ham-line"></span>
@@ -61,13 +86,13 @@
     </nav>
 
     <!-- Hero -->
-    <section class="hero" id="hero">
+    <section class="section" id="hero">
       <div class="container" >
         <p class="hero-badge">
           <span class="badge-line"></span>
           AVAILABLE FOR WORK
         </p>
-        <div class="hero-container-top">
+        <div class="hero-container-top reveal">
           <div class="hero-container-details">
             <div>
               <div class="hero-heading-container">
@@ -78,11 +103,11 @@
                   Developer
                 </h1>
               </div>
-              <p class="hero-bio">
+              <p class="hero-bio reveal">
                 I'm an aspiring full-stack developer passionate about building responsive, intuitive and visually 
                 engaging web applications while continuosly expanding my skills across both frontend and backend development
               </p>
-              <div class="hero-btns">
+              <div class="hero-btns reveal">
                 <a href="#projects" class="btn-primary">View Projects</a>
                 
                 <a href="#contact"  class="btn-secondary">Contact Me</a>
@@ -136,13 +161,13 @@
           <p class="about-bio">I'm Alfred Dametey Kwami, an aspiring full-stack developer with a strong foundation in web development with 4 years of professional experience and currently a 3rd-year ICT student. I have a passion for creating intuitive, responsive and visually appealing web experiences.</p>
         </header>
 
-        <div class="about-grid">
+        <div class="about-grid reveal">
           <article class="about-card reveal">
             <div class="card-top">
               <span class="card-id">01</span>
             </div>
             <h3 class="card-title">What I Can Do</h3>
-            <p class="card-desc">I have experience working with HTML, CSS, and JavaScript to create mordern user interfaces. I design all kinds of websites.</p>
+            <p class="card-desc">I have experience working with HTML, CSS, and JavaScript to create mordern user interfaces.</p>
             <div class="card-tags">
               <span class="tag">Personal Websites</span>
               <span class="tag">Business Websites</span>

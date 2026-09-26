@@ -4,25 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alfred Dametey Kwami — My Portfolio Website</title>
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
 
+     <!-- Sidebar overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    
+    <!-- Mobile sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-label">menu</span>
+        <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#hero"     class="sidebar-link" data-close><span>Home</span>    <span class="sidebar-num">01</span></a>
+        <a href="#projects" class="sidebar-link" data-close><span>Projects</span><span class="sidebar-num">02</span></a>
+        <a href="#skills"   class="sidebar-link" data-close><span>Skills</span>  <span class="sidebar-num">03</span></a>
+        <a href="#resume"   class="sidebar-link" data-close><span>Resume</span>  <span class="sidebar-num">04</span></a>
+        <a href="#contact"  class="sidebar-link" data-close><span>Contact</span> <span class="sidebar-num">05</span></a>
+      </nav>
+      <div class="sidebar-footer">&copy; 2026 Alfred Dametey Kwami</div>
+    </aside>
+
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
       <div class="nav-inner">
+
         <a href="#hero" class="nav-logo">
           <span class="nav-logo-muted">~/</span>Home
         </a>
 
         <div class="nav-desktop">
-          <a href="#projects" class="nav-link">Projects</a>
-          <a href="#skills"   class="nav-link">Skills</a>
-          <a href="#resume"   class="nav-link">Resume</a>
-          <a href="#contact"  class="nav-link">Contact</a>
+          <a href="#about"   class="nav-link">About me</a>
+          <a href="#skills"  class="nav-link">Skills</a>
+          <a href="#projects"class="nav-link">Projects</a>
+          <a href="#resume"  class="nav-link">Resume</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <div class="nav-mobile">
+          <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
+            <span class="ham-line"></span>
+            <span class="ham-line"></span>
+            <span class="ham-line"></span>
+          </button>
         </div>
       </div>
     </nav>
@@ -41,14 +74,13 @@
                 <h1 class="hero-heading">
                   Alfred Dametey<br>
                   <span class="hero-accent">Kwami</span><br>
-                  <span class="hero-muted">Frontend</span><br>
+                  <span class="hero-muted">Aspiring Full-Stack</span><br>
                   Developer
                 </h1>
               </div>
               <p class="hero-bio">
-                I'm a frontend developer with a strong background in web development,
-                passionate about creating intuitive and visually appealing interfaces
-                that provide seamless user experiences.
+                I'm an aspiring full-stack developer passionate about building responsive, intuitive and visually 
+                engaging web applications while continuosly expanding my skills across both frontend and backend development
               </p>
               <div class="hero-btns">
                 <a href="#projects" class="btn-primary">View Projects</a>
@@ -74,7 +106,7 @@
               <span class="stat-label">PROJECTS BUILT</span>
             </div>
             <div class="stat">
-              <span class="stat-value">3</span>
+              <span class="stat-value">4</span>
               <span class="stat-label">YEARS CODING</span>
             </div>
           </div>
@@ -92,12 +124,69 @@
     </section>
 
 
+    <!-- About Me -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section-header reveal">
+          <div class="section-marker-row">
+            <span class="section-num">01</span>
+            <div class="section-rule"></div>
+          </div>
+          <h2 class="section-title">About me</h2>
+          <p class="about-bio">I'm Alfred Dametey Kwami, an aspiring full-stack developer with a strong foundation in web development with 4 years of professional experience and currently a 3rd-year ICT student. I have a passion for creating intuitive, responsive and visually appealing web experiences.</p>
+        </header>
+
+        <div class="about-grid">
+          <article class="about-card reveal">
+            <div class="card-top">
+              <span class="card-id">01</span>
+            </div>
+            <h3 class="card-title">What I Can Do</h3>
+            <p class="card-desc">I have experience working with HTML, CSS, and JavaScript to create mordern user interfaces. I design all kinds of websites.</p>
+            <div class="card-tags">
+              <span class="tag">Personal Websites</span>
+              <span class="tag">Business Websites</span>
+              <span class="tag">Landing Pages</span>
+              <span class="tag">Content Platforms</span>
+              <span class="tag">E-commerce Stores</span>
+            </div>
+          </article>
+
+          <article class="about-card reveal">
+            <div class="card-top">
+              <span class="card-id">02</span>
+            </div>
+            <h3 class="card-title">What I Am Learning</h3>
+            <p class="card-desc">I'm currently expanding my skills in Python, backend development, APIs, and databases as I work toward becoming a professional full-stack developer.</p>
+            <div class="card-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Flask/APIs</span>
+              <span class="tag">Database Development</span>
+            </div>
+          </article>
+
+          <article class="about-card reveal">
+            <div class="card-top">
+              <span class="card-id">03</span>
+            </div>
+            <h3 class="card-title">My Goal</h3>
+            <p class="card-desc">My goal is to grow into a well-rounded developer capable of building complete web applications form the frontend to the backend while creating solutions that are useful, reliable, and user-focused.</p>
+            <div class="card-tags">
+              <span class="tag">Full-Stack Development</span>
+              <span class="tag">Database Development</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
     <!-- Skills -->
     <section class="section" id="skills">
       <div class="container">
         <header class="section-header reveal">
           <div class="section-marker-row">
-            <span class="section-num">01</span>
+            <span class="section-num">02</span>
             <div class="section-rule"></div>
           </div>
           <h2 class="section-title">Skills</h2>
@@ -159,7 +248,7 @@
         <div class="contact-grid">
           <div class="contact-left reveal">
             <div class="section-marker-row">
-              <span class="section-num">02</span>
+              <span class="section-num">03</span>
               <div class="section-rule"></div>
             </div>
             <h2 class="section-title">Contact</h2>
@@ -182,7 +271,7 @@
               </div>
               <div class="contact-row">
                 <span class="contact-label">email</span>
-                <a href="#" class="contact-val">kwamialfred124@gmail.com</a>
+                <a href="mailto:kwamialfred124@gmail.com" class="contact-val">kwamialfred124@gmail.com</a>
               </div>
               <div class="contact-row">
                 <span class="contact-label">linkedin</span>
@@ -222,10 +311,10 @@
     <footer class="footer">
       <div class="container footer-inner">
         <span class="footer-name">&copy; 2026 Alfred Dametey Kwami</span>
-        <span class="footer-note">built with <span class="footer-accent">↑</span> precision</span>
+        <span class="footer-note">built with <span class="footer-accent">&UpArrow;</span> precision</span>
       </div>
     </footer>
 
-
+    <script src="scripts/main.js"></script>
   </body>
 </html>

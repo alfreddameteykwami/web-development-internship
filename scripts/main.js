@@ -82,21 +82,12 @@ const io = new IntersectionObserver((entries) => {
 
 revealEls.forEach(el => io.observe(el));
 
-/* ── Contact form ── */
-const form    = document.getElementById('contact-form');
-const success = document.getElementById('form-success');
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  form.style.display    = 'none';
-  success.style.display = 'flex';
-});
 
 /* ── Navbar shadow on scroll ── */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.style.boxShadow = window.scrollY > 10
-    ? '0 4px 24px rgba(0,0,0,0.18)'
+  ? '0 4px 24px rgba(0,0,0,0.18)'
     : 'none';
 }, { passive: true });
 
@@ -109,21 +100,21 @@ const allNavLinks = document.querySelectorAll(".nav-link, sidebar-link");
 
 allNavLinks.forEach(link => {
   link.addEventListener("click", function () {
-
+    
     const targetId = this.getAttribute("href");
-
+    
     if (!targetId || !targetId.getAttribute("href")) {
       return;
     }
-
+    
     const targetSection = document.querySelector(targetId);
-
+    
     if (!targetSection) {
       return;
     }
-
+    
     closeMenu();
-
+    
   });
 });
 
@@ -167,4 +158,42 @@ const sectionObserver = new IntersectionObserver(
 /* Observe Section */
 sections.forEach(section => {
   sectionObserver.observe(section);
+});
+
+
+/* ── Contact form ── */
+const form    = document.getElementById('contact-form');
+const success = document.getElementById('form-success');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  const submitButton = form.querySelector('.form-submit');
+
+  submitButton.disabled = true;
+  submitButton.textContent = 'Sending...';
+
+  const formData = new FormData(form);
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    body: formData
+  })
+    .then(respond => respond.json())
+    .then(data => {
+      if (data.success) {
+        form.style.display = 'none';
+        success.style.display = 'flex';
+      } else {
+        throw new Error(data.message);
+      }
+    })
+    .catch(error => {
+      console.error('Form submission error:', error);
+  
+      submitButton.disabled = false;
+      submitButton.textContent = 'Send Message';
+  
+      alert('Something went wrong. Please try again.');
+    });
 });

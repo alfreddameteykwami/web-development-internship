@@ -486,7 +486,10 @@
 
           <div class="contact-form-wrap reveal">
             <form class="contact-form" id="contact-form">
-              <p class="form-endpoint"><span class="form-method">POST</span> /api/contact</p>
+
+              <input type="hidden" name="access_key" value="4a7aab5c-0daf-40d9-aa9e-579a228c2f77">
+
+              <p class="form-endpoint"><span class="form-method">POST</span> /contact</p>
 
               <div class="form-field">
                 <label class="form-label" for="name">Name</label>
@@ -502,6 +505,7 @@
               </div>
               <button type="submit" class="form-submit">Send Message</button>
             </form>
+            
             <div class="form-success" id="form-success" style="display:none">
               <p class="success-cmd">$ message sent</p>
               <p class="success-note">I'll get back to you within 48h</p>

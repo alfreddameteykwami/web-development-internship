@@ -94,7 +94,7 @@ window.addEventListener('scroll', () => {
 /* Navigation */
 const navLinks = document.querySelectorAll(".nav-link");
 const sidebarLinks = document.querySelectorAll(".sidebar-link");
-const sections = document.querySelectorAll("#home, #about, #skills, #projects, #resume, #contact");
+const sections = document.querySelectorAll("#hero, #about, #skills, #projects, #resume, #contact");
 
 const allNavLinks = document.querySelectorAll(".nav-link, sidebar-link");
 

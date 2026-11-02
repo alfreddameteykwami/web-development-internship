@@ -1,0 +1,5 @@
+User-agent:*
+Allow:/
+
+Sitemap: https://alfredkwamidev.vercel.app/
+sitemap.xml

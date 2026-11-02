@@ -146,6 +146,8 @@ The project explores authentication, role-based access, vendor functionality, pr
 
 ## Project Structure
 
+```text
+
 portfolio/
 │
 ├── index.html
@@ -157,6 +159,8 @@ portfolio/
 |── scripts/
 |   └── main.js
 └── README.md
+
+```
 
 ## Getting Started
 
@@ -210,9 +214,9 @@ University of Education, Winneba
 
 Portfolio: https://alfredkwamidev.vercel.app
 
-GitHub: Add your GitHub profile
+GitHub: https://github.com/alfreddameteykwami
 
-LinkedIn: Add your LinkedIn profile
+LinkedIn: https://linkedin.com/in/alfreddameteykwami
 
 ## License
 

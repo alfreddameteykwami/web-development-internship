@@ -291,7 +291,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }
 
 .hero-container-details {
@@ -318,7 +318,7 @@ body {
 
 .hero-heading {
   font-family: var(--font-sans);
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.02em;

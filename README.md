@@ -208,7 +208,7 @@ As I continue developing my skills, I plan to improve the portfolio by:
 
 Alfred Dametey Kwami
 
-Full-Stack Software Developer
+Full-Stack Developer
 
 University of Education, Winneba
 
